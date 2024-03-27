@@ -5,16 +5,10 @@ import streamlit as st
 from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
 from langchain_openai import ChatOpenAI
 
-
 load_dotenv()
 api_key=os.getenv('OPENAI_API_KEY')
 
-
-
-
-
 model=ChatOpenAI(model='gpt-4',)
-
 
 st.title('Ask questions about uploaded csv files')
 if "file_uploader_key" not in st.session_state:
@@ -70,15 +64,3 @@ if st.session_state.show_response:
     st.markdown(f'<p style="background-color:lightblue; padding: 8px 8px; border-radius: 5px;">Question: {st.session_state.last_question}</p>', unsafe_allow_html=True)
     st.write(f"Answer: {st.session_state.response}")
     st.session_state.show_response = False  
-
-
-
-
-'''
-This is a web based AI chatbot that is built using streamlit and langchain that answer any questions relevant to the data that we provided
-Here we are using OpenAI as LLM and gpt-4 model
-The data to be provided needs to be in csv format only and we can pass any no. of csv files whether relevant to each other or not and model learns it
-We can also Clear all the files that we have passed in which case model completely learns the new files that we will pass
-With streamlit i have made a web interface that allows one to upload multiple files, to clear all the files uploaded, to ask the question and display the responce 
-With langchain I have made a agent using create_pandas_dataframe_agent which takes in our dataframe and the openai model and generate responce based on the asked question
-'''
