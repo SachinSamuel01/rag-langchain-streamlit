@@ -18,7 +18,7 @@ git clone https://github.com/yourusername/rag-langchain-streamlit.git
 cd rag-langchain-streamlit
 ```
 
-## Usage (Tterminal )
+## Usage (Terminal )
 To run this project, you will need Python and the necessary packages. Follow these steps to set up the environment:
 
 Create and activate a virtual environment (optional but recommended):
